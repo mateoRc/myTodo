@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 <title>Hello from JSP</title>
 <%
-System.out.print(request.getParameter("name"));
 java.util.Date date = new java.util.Date();
 %>
 </head>
