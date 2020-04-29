@@ -11,7 +11,7 @@ java.util.Date date = new java.util.Date();
 %>
 </head>
 <body>
-Welcome ${name}, your password is ${password}
+Welcome ${name}
 <p>Todos: ${todos}</p>
 </body>
 </html>

@@ -11,15 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.in28minutes.todo.TodoService;
 
-@WebServlet(urlPatterns = "/todo.do")
-public class TodoServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/delete-todo.do")
+public class DeleteTodoServlet extends HttpServlet {
 
 	private TodoService todoService = new TodoService();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("todos", todoService.retrieveTodos());
-		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
+		todoService.deleteTodo(new Todo(request.getParameter("todo")));
+		
+		response.sendRedirect("/todo.do");
 	}
 	
 	@Override
