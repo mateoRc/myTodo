@@ -18,17 +18,18 @@ public class DeleteTodoServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		todoService.deleteTodo(new Todo(request.getParameter("todo")));
+		todoService.deleteTodo(new Todo(request.getParameter("todo"), request.getParameter("category")));
 		
-		response.sendRedirect("/list-todo.do");
+		response.sendRedirect("/list-todos.do");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String newTodo = request.getParameter("todo");
-		todoService.addTodo(new Todo(newTodo));
+		String todoName = request.getParameter("todo");
+		String todoDesc = request.getParameter("description");
+		todoService.addTodo(new Todo(todoName, todoDesc));
 		
-		response.sendRedirect("/list-todo.do");
+		response.sendRedirect("/list-todos.do");
 	}
 	
 }
