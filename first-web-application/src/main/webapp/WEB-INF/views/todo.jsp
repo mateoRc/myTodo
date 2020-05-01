@@ -27,7 +27,7 @@
 			</ul>
 	
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/login.do">Login</a></li>
+				<li><a href="/logout.do">Logout</a></li>
 			</ul>
 	
 		</nav>
